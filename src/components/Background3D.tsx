@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
@@ -24,7 +24,7 @@ function FloatingShape({ position, color, speed = 1 }: { position: [number, numb
 }
 
 function Particles({ count = 200 }: { count?: number }) {
-    const points = useMemo(() => {
+    const [points] = useState(() => {
         const positions = new Float32Array(count * 3);
         for (let i = 0; i < count; i++) {
             positions[i * 3] = (Math.random() - 0.5) * 20;
@@ -32,7 +32,7 @@ function Particles({ count = 200 }: { count?: number }) {
             positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
         }
         return positions;
-    }, [count]);
+    });
 
     const pointsRef = useRef<THREE.Points>(null);
 
@@ -43,6 +43,8 @@ function Particles({ count = 200 }: { count?: number }) {
         }
     });
 
+
+
     return (
         <points ref={pointsRef}>
             <bufferGeometry>
@@ -51,6 +53,7 @@ function Particles({ count = 200 }: { count?: number }) {
                     count={count}
                     array={points}
                     itemSize={3}
+                    args={[points, 3]}
                 />
             </bufferGeometry>
             <pointsMaterial size={0.02} color="#6366f1" transparent opacity={0.8} sizeAttenuation />

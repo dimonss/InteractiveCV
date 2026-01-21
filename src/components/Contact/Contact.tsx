@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Send, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Github, Linkedin, Send, Instagram, Mail, Phone, MapPin, type LucideProps } from 'lucide-react';
 import { useLocaleStore } from '../../store/localeStore';
 import { content, socialLinks } from '../../data/content';
 import styles from './Contact.module.css';
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, React.ComponentType<LucideProps>> = {
     github: Github,
     linkedin: Linkedin,
     send: Send,
