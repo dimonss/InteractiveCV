@@ -10,6 +10,9 @@
     color: var(--text-primary);
     cursor: pointer;
     transition: all var(--transition-fast);
+    div {
+        height: 18px;
+    }
 }
 
 .toggle:hover {

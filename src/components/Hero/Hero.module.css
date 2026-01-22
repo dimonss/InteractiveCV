@@ -104,9 +104,11 @@
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-full);
-    padding: 16px;
+    padding: 18px 16px 14px 16px;
     cursor: pointer;
     transition: all var(--transition-fast);
+    width: 64px;
+    height: 64px;
 }
 
 .scrollBtn:hover {
