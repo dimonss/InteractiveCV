@@ -49,9 +49,9 @@ export default function Contact() {
                         <Mail size={24} />
                         <span>{t.personal.email}</span>
                     </a>
-                    <a href={`tel:${t.personal.phone1}`} className={styles.infoItem}>
+                    <a href={`tel:${t.personal.phone2}`} className={styles.infoItem}>
                         <Phone size={24} />
-                        <span>{t.personal.phone1}</span>
+                        <span>{t.personal.phone2}</span>
                     </a>
                     <div className={styles.infoItem}>
                         <MapPin size={24} />

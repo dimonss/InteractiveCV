@@ -5,6 +5,7 @@ import { useLocaleStore } from '../../store/localeStore';
 import { content } from '../../data/content';
 import styles from './Hero.module.css';
 import photo from '../../assets/images/I.jpg';
+import DownloadCVButton from '../DownloadCVButton';
 
 export default function Hero() {
     const { locale } = useLocaleStore();
@@ -96,9 +97,11 @@ export default function Hero() {
                     </div>
                     <div className={styles.infoItem}>
                         <Phone size={16} />
-                        <a href={`tel:${t.personal.phone1}`}>{t.personal.phone1}</a>
+                        <a href={`tel:${t.personal.phone2}`}>{t.personal.phone2}</a>
                     </div>
                 </motion.div>
+
+                <DownloadCVButton />
 
                 <motion.button
                     className={styles.scrollBtn}
